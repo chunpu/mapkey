@@ -21,6 +21,11 @@ Installation
 npm i mapkey
 ```
 
+Api
+---
+
+`var translatedObj = mapKey(translateMap, rawObj)`
+
 Usage
 ---
 

@@ -1,3 +1,8 @@
+Api
+---
+
+`var translatedObj = mapKey(translateMap, rawObj)`
+
 Usage
 ---
 
