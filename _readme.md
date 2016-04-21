@@ -1,6 +1,23 @@
-var assert = require('assert')
-var mapKey = require('./')
+Usage
+---
 
+```js
+var mapKey = require('mapkey')
+
+mapKey({
+	u: 'username',
+	p: 'password'
+}, {
+	u: 'Bob',
+	p: 'secret'
+})
+
+// => {username: 'Bob', password: 'secret'}
+```
+
+### map key deep
+
+```js
 var translateMap = {
 	a: 'apple',
 	g: 'google',
@@ -85,8 +102,7 @@ var expected = {
 
 var ret = mapKey(translateMap, raw)
 
-// console.log(JSON.stringify(ret, 0, 4))
-
 assert.deepEqual(ret, expected)
+```
 
-console.log('pass!')
+mapKey support curry

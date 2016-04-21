@@ -1,6 +1,46 @@
-var assert = require('assert')
-var mapKey = require('./')
+mapkey
+===
 
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][downloads-url]
+[![Dependency Status][david-image]][david-url]
+[npm-image]: https://img.shields.io/npm/v/mapkey.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/mapkey
+[downloads-image]: http://img.shields.io/npm/dm/mapkey.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/mapkey
+[david-image]: http://img.shields.io/david/chunpu/mapkey.svg?style=flat-square
+[david-url]: https://david-dm.org/chunpu/mapkey
+
+
+map key deep
+
+Installation
+---
+
+```sh
+npm i mapkey
+```
+
+Usage
+---
+
+```js
+var mapKey = require('mapkey')
+
+mapKey({
+	u: 'username',
+	p: 'password'
+}, {
+	u: 'Bob',
+	p: 'secret'
+})
+
+// => {username: 'Bob', password: 'secret'}
+```
+
+### map key deep
+
+```js
 var translateMap = {
 	a: 'apple',
 	g: 'google',
@@ -85,8 +125,15 @@ var expected = {
 
 var ret = mapKey(translateMap, raw)
 
-// console.log(JSON.stringify(ret, 0, 4))
-
 assert.deepEqual(ret, expected)
+```
 
-console.log('pass!')
+mapKey support curry
+
+License
+---
+
+[![License][license-image]][license-url]
+
+[license-image]: http://img.shields.io/npm/l/mapkey.svg?style=flat-square
+[license-url]: #
