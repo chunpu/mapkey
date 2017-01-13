@@ -10,7 +10,7 @@ function mapKey(map, raw) {
 		_.forIn(raw, function(val, key) {
 			var info = map[key]
 			if (null != info) {
-				if (is.obj(info)) {
+				if (is.object(info)) {
 					var type = info.type || getType(val)
 					var name = info.name
 					if ('object' == type) {
