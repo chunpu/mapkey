@@ -1,5 +1,6 @@
 var assert = require('assert')
 var mapKey = require('./')
+var invert = require('./invert')
 
 var translateMap = {
 	a: 'apple',
@@ -83,10 +84,13 @@ var expected = {
 	number: 1024
 }
 
-var ret = mapKey(translateMap, raw)
+var translated = mapKey(translateMap, raw)
+assert.deepEqual(translated, expected)
 
-// console.log(JSON.stringify(ret, 0, 4))
-
-assert.deepEqual(ret, expected)
+var invertedTranslateMap = invert(translateMap)
+var rawAgain = mapKey(invertedTranslateMap, translated)
+delete raw.key_has_no_map // 去掉没用的 key
+assert.deepEqual(rawAgain, raw)
+// console.log(JSON.stringify(rawAgain, 0, 4))
 
 console.log('pass!')
